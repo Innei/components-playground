@@ -1,0 +1,28 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "author": "Innei",
+  "license": "ISC",
+  "dependencies": {
+    "@components/styles": "workspace:0.0.1",
+    "@types/react": "17.0.38",
+    "@types/react-dom": "17.0.11",
+    "antd": "4.18.5",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-helmet": "6.1.0",
+    "react-loadable": "5.5.0",
+    "react-router-dom": "6.2.1"
+  },
+  "devDependencies": {
+    "@types/react-loadable": "5.5.6",
+    "@vitejs/plugin-react": "1.1.4",
+    "unplugin-auto-import": "0.5.11"
+  }
+}
