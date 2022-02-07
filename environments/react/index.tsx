@@ -1,5 +1,4 @@
 import '@components/styles/index.css'
-import 'antd/dist/antd.css'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { RouterLayout } from './layout/router-layout'

@@ -8,9 +8,9 @@
     "dev:react": "pnpm run dev -C environments/react"
   },
   "author": "Innei",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
-    "@innei-util/prettier": "0.1.4",
+    "@innei-util/prettier": "0.2.2",
     "autoprefixer": "10.4.2",
     "postcss": "8.4.5",
     "prettier": "2.5.1",

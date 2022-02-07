@@ -1,4 +1,4 @@
-import { Layout, Menu } from 'antd'
+import { Layout, Nav } from '@douyinfe/semi-ui'
 import React from 'react'
 import Loadable from 'react-loadable'
 import {
@@ -26,27 +26,23 @@ const routes = Object.entries(pages).map(([filename, component]) => {
     meta: { page: true },
   }
 })
-const { Header, Content, Footer, Sider } = Layout
-const { SubMenu } = Menu
+const { Content, Sider } = Layout
 
 export const RouterLayout = () => {
-  const [collapsed, setCollapsed] = React.useState(false)
   return (
     <Router>
-      <Layout className="!min-h-screen">
-        <Sider collapsible collapsed={collapsed} onCollapse={setCollapsed}>
+      <Layout hasSider className="!min-h-screen">
+        <Sider>
           <MenuSider />
         </Sider>
 
-        <Layout className="p-4">
-          <Content>
-            <Routes>
-              {routes.map(({ path, name, component: Comp }) => (
-                <Route path={path} key={name} element={<Comp />} />
-              ))}
-            </Routes>
-          </Content>
-        </Layout>
+        <Content className="p-4">
+          <Routes>
+            {routes.map(({ path, name, component: Comp }) => (
+              <Route path={path} key={name} element={<Comp />} />
+            ))}
+          </Routes>
+        </Content>
       </Layout>
     </Router>
   )
@@ -58,14 +54,23 @@ const MenuSider = () => {
   const name = router.pathname.slice(1)
 
   return (
-    <Menu className="!pt-8" theme="dark" activeKey={name} mode="inline">
+    <Nav
+      className="!pt-8 h-screen"
+      mode={'vertical'}
+      selectedKeys={[name]}
+      footer={{
+        collapseButton: true,
+      }}
+    >
       {routes.map(({ path, name }) => {
         return (
-          <Menu.Item key={name}>
-            <Link to={path}>{name}</Link>
-          </Menu.Item>
+          <Nav.Item key={name} itemKey={name}>
+            <Link to={path} className="flex w-full h-full">
+              {name}
+            </Link>
+          </Nav.Item>
         )
       })}
-    </Menu>
+    </Nav>
   )
 }
